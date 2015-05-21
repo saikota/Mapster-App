@@ -1,12 +1,6 @@
-(function(window, google, $) {
+(function(window, google, $, mapster) {
 
-	var options = {
-		center : {
-			lat : 37.791350,
-			lng : -122.435883
-		},
-		zoom : 10
-	};
+	var options = mapster.MAP_OPTIONS;
 
 	var maps = new google.maps.Map($("#map-canvas")[0], options);
-}(window, google, jQuery));
+}(window, google, jQuery,window.Mapster||(window.Mapster={})));
