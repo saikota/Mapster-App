@@ -19,6 +19,20 @@
 					google.maps.event.addListener(this.gMap,event,function(e){
 						callback.call(self,e);
 					});
+				},
+				addMarker:function(lat,lng,draggable){
+					this.createMarker(lat,lng,draggable);
+				},
+				createMarker:function(lat,lng,draggable){
+					var opts={
+							position:{
+								lat:lat,
+								lng:lng
+							},
+							draggable:draggable,
+							map:this.gMap
+					}
+					return new google.maps.Marker(opts);
 				}
 		};
 		return Mapster;
