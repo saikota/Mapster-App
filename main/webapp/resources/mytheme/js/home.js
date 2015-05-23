@@ -10,5 +10,10 @@
 
 		console.log(" you are done dragging", this);
 	})
-	maps.addMarker(37.791350, -122.435883, true);
+	maps.addMarker({
+		lat : 37.791350,
+		lng : -122.435883,
+		draggable : true,
+		visible:true
+		});
 }(window, google, jQuery,window.Mapster||(window.Mapster={})));
