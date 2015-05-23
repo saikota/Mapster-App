@@ -20,19 +20,18 @@
 						callback.call(self,e);
 					});
 				},
-				addMarker:function(lat,lng,draggable){
-					this.createMarker(lat,lng,draggable);
-				},
-				createMarker:function(lat,lng,draggable){
-					var opts={
-							position:{
-								lat:lat,
-								lng:lng
-							},
-							draggable:draggable,
-							map:this.gMap
+				addMarker:function(opts){
+				 opts.position = {
+						lat : opts.lat,
+						lng : opts.lng
 					}
-					return new google.maps.Marker(opts);
+					this.createMarker(opts);
+				},
+				createMarker:function(opts){
+					 opts.map=this.gMap;
+					 console.log(opts);
+					 return new google.maps.Marker(opts);
+					
 				}
 		};
 		return Mapster;
