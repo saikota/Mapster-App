@@ -1,37 +1,47 @@
 (function(window,google){
-	
+
 	var Mapster=(function(){
-		
+
 		function Mapster(elem,options){
 			this.gMap=new google.maps.Map(elem,options);
 		}
-		
+
 		Mapster.prototype={
 				zoom:function(level){
 					if(level){
 						this.gMap.setZoom(level);
 					} else {
 						return this.gMap.getZoom();
-				    }
+					}
 				},
-				_on:function(event, callback){
+				_on:function(opts){
 					var self=this;
-					google.maps.event.addListener(this.gMap,event,function(e){
-						callback.call(self,e);
+					google.maps.event.addListener(opts.obj,opts.event,function(e){
+						opts.callback.call(self,e);
 					});
 				},
 				addMarker:function(opts){
-				 opts.position = {
-						lat : opts.lat,
-						lng : opts.lng
+					var marker;
+					opts.position = {
+							lat : opts.lat,
+							lng : opts.lng
 					}
-					this.createMarker(opts);
+					marker = this.createMarker(opts);
+
+					if(opts.event){
+						this._on({
+							obj:marker,
+							event:opts.event.name,
+							callback:opts.event.callback
+						});
+
+					}
 				},
 				createMarker:function(opts){
-					 opts.map=this.gMap;
-					 console.log(opts);
-					 return new google.maps.Marker(opts);
-					
+					opts.map=this.gMap;
+					console.log(opts);
+					return new google.maps.Marker(opts);
+
 				}
 		};
 		return Mapster;
@@ -41,5 +51,5 @@
 		return new Mapster(elem,options);
 	}
 	window.Mapster=Mapster;
-	
+
 }(window,google));
