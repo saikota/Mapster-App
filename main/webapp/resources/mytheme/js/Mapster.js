@@ -27,21 +27,18 @@
 							lng : opts.lng
 					}
 					marker = this.createMarker(opts);
-
 					if(opts.event){
 						this._on({
 							obj:marker,
 							event:opts.event.name,
 							callback:opts.event.callback
 						});
-
 					}
 				},
 				createMarker:function(opts){
 					opts.map=this.gMap;
 					console.log(opts);
 					return new google.maps.Marker(opts);
-
 				}
 		};
 		return Mapster;
