@@ -2,7 +2,6 @@
 
 	var maps= mapster.create($("#map-canvas")[0], mapster.MAP_OPTIONS);
 	maps.zoom(16);
-
 	maps.addMarker({
 		lat : 37.791350,
 		lng : -122.435883,
