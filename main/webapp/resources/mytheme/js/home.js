@@ -7,11 +7,12 @@
 		lng : -122.435883,
 		draggable : true,
 		visible:true,
-		event:{
-			name:'dragend',
-			callback:function(){
-				alert(' i am dragged just now');
-			}
-		}
+		content:' i like good food',
+//		event:{
+//			name:'click'
+////			callback:function(){
+////				alert(' i am dragged just now');
+////			}
+//		}
 		});
 }(window, google, jQuery,window.Mapster||(window.Mapster={})));
