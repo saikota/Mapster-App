@@ -42,14 +42,13 @@
 
 <div id="map-canvas"></div>
       
-
-
     </div> 
 	
     
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"> </script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script src="<c:url value="/resources/mytheme/js/List.js" />"></script>
 	<script src="<c:url value="/resources/mytheme/js/Mapster.js" />"></script>
 	<script src="<c:url value="/resources/mytheme/js/map-options.js" />"></script>
 	<script src="<c:url value="/resources/mytheme/js/home.js" />"></script>
